@@ -9,7 +9,7 @@ const Container = styled.ul`
 
 const AMonth = styled.li`
   width: 100%;
-  height: 300px;
+  height: 320px;
 `;
 
 const MonthTitle = styled.h4`
