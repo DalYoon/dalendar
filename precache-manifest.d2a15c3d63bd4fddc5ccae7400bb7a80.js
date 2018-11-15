@@ -4,15 +4,15 @@ self.__precacheManifest = [
     "url": "/dalendar/static/js/runtime~main.92f82c98.js"
   },
   {
-    "revision": "4459127224fe06a17c30",
-    "url": "/dalendar/static/js/main.44591272.chunk.js"
+    "revision": "7e363363de1398cebcf9",
+    "url": "/dalendar/static/js/main.7e363363.chunk.js"
   },
   {
     "revision": "52d3dc93c9a0a9d512b8",
     "url": "/dalendar/static/js/1.52d3dc93.chunk.js"
   },
   {
-    "revision": "5202ccf192ed166ec016d0d764bd03dd",
+    "revision": "ce505f9dc04c0803c9159a81c7685cb6",
     "url": "/dalendar/index.html"
   }
 ];
