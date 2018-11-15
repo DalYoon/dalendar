@@ -56,6 +56,7 @@ const ScrollArea = styled.div`
   height: 400px;
   overflow: scroll;
   overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
 `;
 
 const DalendarPresenter = ({
