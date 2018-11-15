@@ -58,14 +58,24 @@ const ScrollArea = styled.div`
   overflow-x: hidden;
 `;
 
-const DalendarPresenter = ({ years, daysInWeek, today, scrollListener, scrollToToday }) => (
+const DalendarPresenter = ({
+  years,
+  daysInWeek,
+  today,
+  scrollListener,
+  scrollToToday,
+  currentScrollTop,
+  todayScrollTop
+}) => (
   <Container>
     <Header>
       {daysInWeek.map((day, index) => (
         <DayIndex key={index}>{day}</DayIndex>
       ))}
     </Header>
-    <TodayBtn onClick={() => scrollToToday()}>today</TodayBtn>
+    {(currentScrollTop - 70 > todayScrollTop || currentScrollTop + 70 < todayScrollTop) && (
+      <TodayBtn onClick={() => scrollToToday()}>today</TodayBtn>
+    )}
     <ScrollArea id={"scrollArea"} onScroll={scrollListener} scrollTop={1380}>
       <Year years={years} today={today} scrollToToday={scrollToToday} />
     </ScrollArea>

@@ -6,6 +6,7 @@ class DalendarContainer extends React.Component {
     today: new Date(),
     years: [],
     daysInWeek: ["Sun", "Mon", "Tue", "Wed", "Thurs", "Fri", "Sat"],
+    todayScrollTop: 0,
     currentScrollTop: 0
   };
 
@@ -14,8 +15,7 @@ class DalendarContainer extends React.Component {
   }
 
   render() {
-    const { years, daysInWeek, today } = this.state;
-    console.log(this.state.currentScrollTop);
+    const { years, daysInWeek, today, currentScrollTop, todayScrollTop } = this.state;
     return (
       <DalendarPresenter
         years={years}
@@ -23,6 +23,8 @@ class DalendarContainer extends React.Component {
         today={today}
         scrollListener={this.scrollListener}
         scrollToToday={this.scrollToToday}
+        currentScrollTop={currentScrollTop}
+        todayScrollTop={todayScrollTop}
       />
     );
   }
@@ -49,15 +51,19 @@ class DalendarContainer extends React.Component {
 
   // -----------------------------------------------------------------
 
-  scrollToToday = async () => {
+  scrollToToday = () => {
     const { today } = this.state;
     const year = today.getFullYear();
-    const month = today.getMonth();
+    const month = today.getMonth() + 1;
     // get todays top offset from scroll top
     const thisMonth = document.getElementById(`${year}_${month}`);
-    const todayPosition = thisMonth.offsetTop;
+    const todayScrollTop = thisMonth.offsetTop - 80;
+
+    this.setState({
+      todayScrollTop
+    });
     // set scroll top to move to today
-    this.setScrollTop(todayPosition);
+    this.setScrollTop(todayScrollTop);
   };
 
   // -----------------------------------------------------------------
