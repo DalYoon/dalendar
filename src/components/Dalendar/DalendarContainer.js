@@ -23,8 +23,6 @@ class DalendarContainer extends React.Component {
         today={today}
         scrollListener={this.scrollListener}
         scrollToToday={this.scrollToToday}
-        setScrollTop={this.setScrollTop}
-        setTodayPosition={this.setTodayPosition}
       />
     );
   }
@@ -55,11 +53,9 @@ class DalendarContainer extends React.Component {
     const { today } = this.state;
     const year = today.getFullYear();
     const month = today.getMonth();
-    let todayPosition = 0;
     // get todays top offset from scroll top
     const thisMonth = document.getElementById(`${year}_${month}`);
-    todayPosition = thisMonth.offsetTop;
-
+    const todayPosition = thisMonth.offsetTop;
     // set scroll top to move to today
     this.setScrollTop(todayPosition);
   };
