@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/dalendar/precache-manifest.d2a15c3d63bd4fddc5ccae7400bb7a80.js"
+  "/dalendar/precache-manifest.9874055ab54532672904450080759edd.js"
 );
 
 workbox.clientsClaim();
